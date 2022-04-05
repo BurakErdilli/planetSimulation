@@ -1,6 +1,10 @@
 import pygame
 import math
-
+#C:\Users\berdi\PycharmProjects\planetSimulation>git remote add origin https://github.com/BurakErdilli/planetSimulation.git
+#
+# C:\Users\berdi\PycharmProjects\planetSimulation>git branch -M main
+#
+# C:\Users\berdi\PycharmProjects\planetSimulation>git push -u origin main
 pygame.init()
 
 WIDTH, HEIGHT = 1920, 1080
@@ -24,7 +28,7 @@ class Planet:
     AU = 149.6e6 * 1000
     G = 6.67428e-11
     SCALE = 200 / AU  # 1AU = 100 pixels
-    TIMESTEP = 3600 * 24   # 1 day
+    TIMESTEP = 3600 * 24 /5   # 1 day
 
     def __init__(self, x, y, radius, color, mass):
         self.x = x
@@ -115,20 +119,20 @@ def main():
     jupiter = Planet(5.2 * Planet.AU, 0, 40, BROWN, 1.9 * 10 ** 27)
     jupiter.y_vel=-13.1 * 1000
 
-    uranus=Planet(19.2 * Planet.AU, 0, 20, DARK_BLUE, 8.68 * 10**25 )
+    uranus=Planet(19.2 * Planet.AU, 0, 20, DARK_BLUE, 8.68 * 10 ** 25)
     uranus.y_vel=-6.8 * 1000
 
-    saturn=Planet(9.5 * Planet.AU, 0, 35, LIGHT_YELLOW, 5.68 * 10 **26)
+    saturn=Planet(9.5 * Planet.AU, 0, 35, LIGHT_YELLOW, 5.68 * 10 ** 26)
     saturn.y_vel=-9.7 * 1000
 
-    neptun=Planet(30 * Planet.AU, 0 , 20, LIGHT_BLUE, 1.024 * 10 **26)
+    neptun=Planet(30 * Planet.AU, 0, 20, LIGHT_BLUE, 1.024 * 10 ** 26)
     neptun.y_vel=-5.4 * 1000
 
-    moon_dist=Planet.AU*1000 - 384399
-    moon_test=Planet(-1*moon_dist, 0, 20, WHITE, 0.073* 10 **24)
+    moon_dist=Planet.AU + 3844000
+    moon_test=Planet(-1*moon_dist, 0, 10, DARK_GREY, 7.34 * 10 ** 22)
     moon_test.y_vel= earth.y_vel + 1022
 
-    planets = [sun, mercury, venus , earth, moon_test, mars, jupiter, saturn, uranus, neptun]
+    planets = [sun,mercury,venus, earth, moon_test,mars, jupiter, saturn, uranus, neptun]
     #planets = [sun, venus , earth, mars, moon_test]
     #planets = [moon_test]
 
