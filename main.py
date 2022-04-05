@@ -1,10 +1,11 @@
 import pygame
 import math
-#C:\Users\berdi\PycharmProjects\planetSimulation>git remote add origin https://github.com/BurakErdilli/planetSimulation.git
+
+# git remote add origin https://github.com/BurakErdilli/planetSimulation.git
+
+# git branch -M main
 #
-# C:\Users\berdi\PycharmProjects\planetSimulation>git branch -M main
-#
-# C:\Users\berdi\PycharmProjects\planetSimulation>git push -u origin main
+# git push -u origin main
 pygame.init()
 
 WIDTH, HEIGHT = 1920, 1080
@@ -16,10 +17,10 @@ YELLOW = (255, 255, 0)
 BLUE = (100, 149, 237)
 RED = (188, 39, 50)
 DARK_GREY = (80, 78, 81)
-BROWN=(200,102,0)
-DARK_BLUE=(0,0,255)
-LIGHT_YELLOW=(255,255,102)
-LIGHT_BLUE=(0,204,204)
+BROWN = (200, 102, 0)
+DARK_BLUE = (0, 0, 255)
+LIGHT_YELLOW = (255, 255, 102)
+LIGHT_BLUE = (0, 204, 204)
 
 FONT = pygame.font.SysFont("comicsans", 16)
 
@@ -28,7 +29,7 @@ class Planet:
     AU = 149.6e6 * 1000
     G = 6.67428e-11
     SCALE = 200 / AU  # 1AU = 100 pixels
-    TIMESTEP = 3600 * 24 /5   # 1 day
+    TIMESTEP = 3600 * 24 / 5  # 1 day
 
     def __init__(self, x, y, radius, color, mass):
         self.x = x
@@ -117,24 +118,24 @@ def main():
     venus.y_vel = -35.02 * 1000
 
     jupiter = Planet(5.2 * Planet.AU, 0, 40, BROWN, 1.9 * 10 ** 27)
-    jupiter.y_vel=-13.1 * 1000
+    jupiter.y_vel = -13.1 * 1000
 
-    uranus=Planet(19.2 * Planet.AU, 0, 20, DARK_BLUE, 8.68 * 10 ** 25)
-    uranus.y_vel=-6.8 * 1000
+    uranus = Planet(19.2 * Planet.AU, 0, 20, DARK_BLUE, 8.68 * 10 ** 25)
+    uranus.y_vel = -6.8 * 1000
 
-    saturn=Planet(9.5 * Planet.AU, 0, 35, LIGHT_YELLOW, 5.68 * 10 ** 26)
-    saturn.y_vel=-9.7 * 1000
+    saturn = Planet(9.5 * Planet.AU, 0, 35, LIGHT_YELLOW, 5.68 * 10 ** 26)
+    saturn.y_vel = -9.7 * 1000
 
-    neptun=Planet(30 * Planet.AU, 0, 20, LIGHT_BLUE, 1.024 * 10 ** 26)
-    neptun.y_vel=-5.4 * 1000
+    neptun = Planet(30 * Planet.AU, 0, 20, LIGHT_BLUE, 1.024 * 10 ** 26)
+    neptun.y_vel = -5.4 * 1000
 
-    moon_dist=Planet.AU + 3844000
-    moon_test=Planet(-1*moon_dist, 0, 10, DARK_GREY, 7.34 * 10 ** 22)
-    moon_test.y_vel= earth.y_vel + 1022
+    moon_dist = Planet.AU + 3844000
+    moon_test = Planet(-1 * moon_dist, 0, 10, DARK_GREY, 7.34 * 10 ** 22)
+    moon_test.y_vel = earth.y_vel + 1022
 
-    planets = [sun,mercury,venus, earth, moon_test,mars, jupiter, saturn, uranus, neptun]
-    #planets = [sun, venus , earth, mars, moon_test]
-    #planets = [moon_test]
+    planets = [sun, mercury, venus, earth, moon_test, mars, jupiter, saturn, uranus, neptun]
+    # planets = [sun, venus , earth, mars, moon_test]
+    # planets = [moon_test]
 
     while run:
         clock.tick(60)
